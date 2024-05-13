@@ -15,7 +15,10 @@ function UserAPI(token) {
       const getUser = async () => {
         try {
           const res = await axios.get("/user/infor", {
-            headers: { Authorization: token },
+            headers: { 
+              Authorization: token,
+              Origin: 'https://ui-shop.vercel.app',
+             },
           });
           setUser(res.data);
           setIsLogged(true);
