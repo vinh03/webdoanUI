@@ -3,31 +3,32 @@ import ProductsAPI from "./api/ProductsAPI";
 import UserAPI from "./api/UserAPI";
 import CategoriesAPI from "./api/CategoriesAPI";
 import axios from "axios";
+
 axios.defaults.withCredentials = true;
+
 export const GlobalState = createContext();
 
 export const DataProvider = ({ children }) => {
   const [token, setToken] = useState(false);
 
   const refreshToken = async () => {
-    const res = await axios.get("https://deploymentshop.onrender.com/user/refresh_token");
-    console.log(res.data)
-    setToken(res.data.accesstoken);
+    try {
+      const res = await axios.get("https://deploymentshop.onrender.com/user/refresh_token");
+      console.log('Response data:', res.data); // Debugging log
+      setToken(res.data.accesstoken);
+    } catch (error) {
+      console.error('Error refreshing token:', error.response ? error.response.data : error);
+    }
   };
 
   useEffect(() => {
     const firstLogin = localStorage.getItem("firstLogin");
     if (firstLogin) {
-      const refreshToken = async () => {
-        const res = await axios.get("https://deploymentshop.onrender.com/user/refresh_token");
-        console.log(res.data)
-        setToken(res.data.accesstoken);
-
-        setTimeout(() => {
-          refreshToken();
-        }, 10 * 60 * 1000);
+      const refreshTokenInterval = async () => {
+        await refreshToken();
+        setTimeout(refreshTokenInterval, 10 * 60 * 1000);
       };
-      refreshToken();
+      refreshTokenInterval();
     }
   }, []);
 
