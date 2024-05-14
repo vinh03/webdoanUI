@@ -66,7 +66,7 @@ function CreateProduct() {
       formData.append("file", file);
 
       setLoading(true);
-      const res = await axios.post("https://deploymentshop.onrender.com/api/upload", formData, {
+      const res = await axios.post("http://deploymentshop.onrender.com/api/upload", formData, {
         headers: {
           "content-type": "multipart/form-data",
           Authorization: token,
@@ -84,7 +84,7 @@ function CreateProduct() {
       if (!isAdmin) return alert("Bạn không có quyền admin");
       setLoading(true);
       await axios.post(
-        "https://deploymentshop.onrender.com/api/destroy",
+        "http://deploymentshop.onrender.com/api/destroy",
         { public_id: images.public_id },
         {
           headers: { Authorization: token },
@@ -109,7 +109,7 @@ function CreateProduct() {
       if (!images) return alert("Chưa tải lên hình ảnh");
 
       if(onEdit){
-        const updateProduct = await axios.put(`https://deploymentshop.onrender.com/api/products/${product._id}`, {...product, images}, {
+        const updateProduct = await axios.put(`http://deploymentshop.onrender.com/api/products/${product._id}`, {...product, images}, {
             headers: {Authorization: token}
         })
         Swal.fire({
@@ -120,7 +120,7 @@ function CreateProduct() {
           timer: 1500
         });
     }else{
-        const createProduct = await axios.post('https://deploymentshop.onrender.com/api/products', {...product, images}, {
+        const createProduct = await axios.post('http://deploymentshop.onrender.com/api/products', {...product, images}, {
             headers: {Authorization: token}
         })
         Swal.fire({

@@ -46,7 +46,7 @@ function Cart() {
     try {
       // Create a checkout session
       const { data } = await axios.post(
-        "https://deploymentshop.onrender.com/api/payment",
+        "http://deploymentshop.onrender.com/api/payment",
         { lineItems },
         {
           headers: { Authorization: token },
