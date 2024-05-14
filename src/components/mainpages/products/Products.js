@@ -36,7 +36,7 @@ function Products() {
         }
       );
 
-      const destroyProduct = await axios.delete(`/api/products/${id}`, {
+      const destroyProduct = await axios.delete(`https://deploymentshop.onrender.com/api/products/${id}`, {
         headers: { Authorization: token },
       });
 
