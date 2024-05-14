@@ -15,7 +15,7 @@ function Login() {
   };
 
   const loginSubmit = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     try {
       const res = await axios.post("https://deploymentshop.onrender.com/user/login", { ...user });
       console.log(res);
@@ -31,8 +31,6 @@ function Login() {
         text: e.response.data.msg,
       });
     }
-
-    e.preventDefault();
   };
   return (
     <div className="login-page">
