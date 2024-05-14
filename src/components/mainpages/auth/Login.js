@@ -18,16 +18,14 @@ function Login() {
     e.preventDefault();
     try {
       const res = await axios.post("https://deploymentshop.onrender.com/user/login", { ...user });
-      console.log(res)
-      localStorage.setItem("test", res);
-      const accessToken = res.data.accesstoken;
+      const accessToken = res.data;
       if (!accessToken) {
         throw new Error("Access token is missing in the server response");
       }
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("firstLogin", true);
 
-      // window.location.href = "/";
+      window.location.href = "/";
     } catch (e) {
       Swal.fire({
         icon: "error",
