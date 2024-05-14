@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-
+axios.defaults.withCredentials = true;
 function CategoriesAPI() {
     const [categories, setCategories] = useState([])
     const [callback, setCallback] = useState(false)

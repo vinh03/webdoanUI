@@ -2,9 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { GlobalState } from "../../../GlobalState";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
 import { TruncatedText } from "../utils/truncated/TruncatedText";
-
+axios.defaults.withCredentials = true;
 function OrderHistory() {
   const state = useContext(GlobalState);
   const [history, setHistory] = state.userAPI.history;

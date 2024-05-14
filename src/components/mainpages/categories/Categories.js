@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { GlobalState } from "../../../GlobalState";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+axios.defaults.withCredentials = true;
 function Categories() {
   const state = useContext(GlobalState);
   const [categories] = state.categoriesAPI.categories;

@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
 import Swal from "sweetalert2";
-
+axios.defaults.withCredentials = true;
 function UserAPI(token) {
   const [isLogged, setIsLogged] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);

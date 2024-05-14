@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { GlobalState } from "../../../GlobalState";
-
+axios.defaults.withCredentials = true;
 function Success() {
   const state = useContext(GlobalState);
   const [cart, setCart] = state.userAPI.cart;

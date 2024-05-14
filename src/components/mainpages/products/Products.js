@@ -6,7 +6,7 @@ import Loading from "../utils/loading/Loading";
 import Filter from "./Filter";
 import LoadMore from "./LoadMore";
 import Swal from "sweetalert2";
-
+axios.defaults.withCredentials = true;
 function Products() {
   const state = useContext(GlobalState);
   const [products, setProducts] = state.productsAPI.products;

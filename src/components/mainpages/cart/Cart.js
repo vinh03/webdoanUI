@@ -6,7 +6,7 @@ import { FaStripe } from "react-icons/fa";
 import { formatCurrency } from "../utils/formatcurrency/FormatCurrency";
 import { TruncatedText } from "../utils/truncated/TruncatedText";
 import Swal from "sweetalert2";
-
+axios.defaults.withCredentials = true;
 function Cart() {
   const state = useContext(GlobalState);
   const [cart, setCart] = state.userAPI.cart;

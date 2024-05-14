@@ -4,7 +4,7 @@ import axios from "axios";
 import Loading from "../utils/loading/Loading";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-
+axios.defaults.withCredentials = true;
 const initialState = {
   product_id: "",
   title: "",

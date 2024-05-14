@@ -3,7 +3,7 @@ import ProductsAPI from "./api/ProductsAPI";
 import UserAPI from "./api/UserAPI";
 import CategoriesAPI from "./api/CategoriesAPI";
 import axios from "axios";
-
+axios.defaults.withCredentials = true;
 export const GlobalState = createContext();
 
 export const DataProvider = ({ children }) => {

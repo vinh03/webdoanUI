@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+axios.defaults.withCredentials = true;
 function Login() {
   const [user, setUser] = useState({
     email: "",
