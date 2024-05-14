@@ -15,10 +15,11 @@ function Login() {
   };
 
   const loginSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     try {
       const res = await axios.post("https://deploymentshop.onrender.com/user/login", { ...user });
-      const accessToken = res.data.accessToken;
+      console.log(res);
+      const accessToken = res.data.accesstoken;
       localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("firstLogin", true);
 
@@ -30,6 +31,8 @@ function Login() {
         text: e.response.data.msg,
       });
     }
+
+    e.preventDefault();
   };
   return (
     <div className="login-page">
