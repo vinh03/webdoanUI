@@ -13,14 +13,13 @@ export const DataProvider = ({ children }) => {
 
   const refreshToken = async () => {
     try {
-      const res = await axios.get("https://deploymentshop.onrender.com/user/refresh_token");
-      console.log('Response data:', res.data); // Debugging log
-      if (res.data && res.data.accesstoken) {
-        setToken(res.data.accesstoken);
-      }else{
-        const storedToken = localStorage.getItem("accessToken");
-        setToken(storedToken);
-      }
+      // const res = await axios.get("https://deploymentshop.onrender.com/user/refresh_token");
+      // console.log('Response data:', res.data); // Debugging log
+      // if (res.data && res.data.accesstoken) {
+      //   setToken(res.data.accesstoken);
+      // }
+      const storedToken = localStorage.getItem("accessToken");
+      setToken(storedToken);
     } catch (error) {
       console.error('Error refreshing token:', error.response ? error.response.data : error);
     }
