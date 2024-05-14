@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { GlobalState } from "../../../GlobalState";
 import ProductItem from "../utils/productItem/ProductItem";
 import { formatCurrency } from "../utils/formatcurrency/FormatCurrency";
-axios.defaults.withCredentials = true;
 function DetailProduct() {
   const params = useParams();
   const state = useContext(GlobalState);
