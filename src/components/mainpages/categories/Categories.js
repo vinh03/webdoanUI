@@ -17,7 +17,7 @@ function Categories() {
     try {
       if (onEdit) {
         const updateCat = await axios.put(
-          `http://deploymentshop.onrender.com/api/category/${id}`,
+          `https://deploymentshop.onrender.com/api/category/${id}`,
           { name: category },
           {
             headers: { Authorization: token },
@@ -32,7 +32,7 @@ function Categories() {
         });
       } else {
         const createCat = await axios.post(
-          "http://deploymentshop.onrender.com/api/category",
+          "https://deploymentshop.onrender.com/api/category",
           { name: category },
           {
             headers: { Authorization: token },
@@ -62,7 +62,7 @@ function Categories() {
 
   const deleteCategory = async (id) => {
     try {
-      const deleteCat = await axios.delete(`http://deploymentshop.onrender.com/api/category/${id}`, {
+      const deleteCat = await axios.delete(`https://deploymentshop.onrender.com/api/category/${id}`, {
         headers: { Authorization: token },
       });
       Swal.fire({

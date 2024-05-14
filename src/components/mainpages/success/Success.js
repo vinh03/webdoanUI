@@ -13,7 +13,7 @@ function Success() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://deploymentshop.onrender.com/api/success/${id}`, {
+        const res = await axios.get(`https://deploymentshop.onrender.com/api/success/${id}`, {
           headers: { Authorization: token },
         });
         setPaymentInfo(res.data);
@@ -29,14 +29,14 @@ function Success() {
               status: true
             };
             console.log(paymentData);
-            await axios.post("http://deploymentshop.onrender.com/api/update-payment", paymentData, {
+            await axios.post("https://deploymentshop.onrender.com/api/update-payment", paymentData, {
               headers: { Authorization: token },
             });
 
             // Clear the local cart state and update the user's cart on the server
             setCart([]);
             await axios.patch(
-              "http://deploymentshop.onrender.com/user/addcart",
+              "https://deploymentshop.onrender.com/user/addcart",
               { cart: [] },
               {
                 headers: { Authorization: token },

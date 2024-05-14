@@ -7,7 +7,7 @@ function CategoriesAPI() {
 
     useEffect(() => {
         const getCategories =async () => {
-            const res = await axios.get('http://deploymentshop.onrender.com/api/category');
+            const res = await axios.get('https://deploymentshop.onrender.com/api/category');
             console.log(res)
             setCategories(res.data)
         }

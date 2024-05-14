@@ -18,7 +18,7 @@ function Register() {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://deploymentshop.onrender.com/user/register", { ...user });
+      await axios.post("https://deploymentshop.onrender.com/user/register", { ...user });
 
       localStorage.setItem("firstLogin", true);
 
