@@ -23,6 +23,8 @@ function Products() {
     setProducts([...products]);
   };
 
+
+
   const deleteProduct = async (id, public_id) => {
     try {
       setLoading(true);
@@ -80,7 +82,7 @@ function Products() {
       if (product.checked) deleteProduct(product._id, product.images.public_id);
     });
   };
-
+  console.log(products)
   if (loading)
     return (
       <div>
