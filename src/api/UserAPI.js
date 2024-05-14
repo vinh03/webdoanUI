@@ -16,8 +16,7 @@ function UserAPI(token) {
         try {
           const res = await axios.get("/user/infor", {
             headers: { 
-              Authorization: token,
-              Origin: 'https://ui-shop.vercel.app',
+              Authorization: token
              },
           });
           setUser(res.data);
