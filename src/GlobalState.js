@@ -11,7 +11,7 @@ export const DataProvider = ({ children }) => {
 
   const refreshToken = async () => {
     const res = await axios.get("https://deploymentshop.onrender.com/user/refresh_token");
-
+    console.log(res.data)
     setToken(res.data.accesstoken);
   };
 
@@ -21,6 +21,7 @@ export const DataProvider = ({ children }) => {
       const refreshToken = async () => {
         const res = await axios.get("https://deploymentshop.onrender.com/user/refresh_token");
 
+        console.log(res.data)
         setToken(res.data.accesstoken);
 
         setTimeout(() => {
