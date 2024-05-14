@@ -13,7 +13,7 @@ function UserAPI(token) {
     if (token) {
       const getUser = async () => {
         try {
-          const res = await axios.get("https://deploymentshop.onrender.com/user/infor", {
+          const res = await axios.get("https://webdoanbe.onrender.com/user/infor", {
             headers: { 
               Authorization: token
              },

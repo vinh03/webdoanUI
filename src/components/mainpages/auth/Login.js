@@ -17,7 +17,7 @@ function Login() {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://deploymentshop.onrender.com/user/login", { ...user });
+      const res = await axios.post("https://webdoanbe.onrender.com/user/login", { ...user });
       const accessToken = res.data;
       if (!accessToken) {
         throw new Error("Access token is missing in the server response");

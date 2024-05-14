@@ -29,14 +29,14 @@ function Products() {
     try {
       setLoading(true);
       const destroyImg = await axios.post(
-        "/api/destroy",
+        "https://webdoanbe.onrender.com/api/destroy",
         { public_id },
         {
           headers: { Authorization: token },
         }
       );
 
-      const destroyProduct = await axios.delete(`https://deploymentshop.onrender.com/api/products/${id}`, {
+      const destroyProduct = await axios.delete(`https://webdoanbe.onrender.com/api/products/${id}`, {
         headers: { Authorization: token },
       });
 

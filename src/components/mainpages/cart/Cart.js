@@ -19,7 +19,7 @@ function Cart() {
 
   const addToCart = async (updatedCart) => {
     await axios.patch(
-      "https://deploymentshop.onrender.com/user/addcart",
+      "https://webdoanbe.onrender.com/user/addcart",
       { cart: updatedCart },
       {
         headers: { Authorization: token },
@@ -46,7 +46,7 @@ function Cart() {
     try {
       // Create a checkout session
       const { data } = await axios.post(
-        "https://deploymentshop.onrender.com/api/payment",
+        "https://webdoanbe.onrender.com/api/payment",
         { lineItems },
         {
           headers: { Authorization: token },
