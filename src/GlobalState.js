@@ -15,7 +15,9 @@ export const DataProvider = ({ children }) => {
     try {
       const res = await axios.get("https://deploymentshop.onrender.com/user/refresh_token");
       console.log('Response data:', res.data); // Debugging log
-      setToken(res.data.accesstoken);
+      if (res.data && res.data.accesstoken) {
+        setToken(res.data.accesstoken);
+      }
     } catch (error) {
       console.error('Error refreshing token:', error.response ? error.response.data : error);
     }
