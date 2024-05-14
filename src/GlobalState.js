@@ -17,6 +17,9 @@ export const DataProvider = ({ children }) => {
       console.log('Response data:', res.data); // Debugging log
       if (res.data && res.data.accesstoken) {
         setToken(res.data.accesstoken);
+      }else{
+        const storedToken = localStorage.getItem("accessToken");
+        setToken(storedToken);
       }
     } catch (error) {
       console.error('Error refreshing token:', error.response ? error.response.data : error);

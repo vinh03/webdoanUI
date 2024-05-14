@@ -17,8 +17,9 @@ function Login() {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://deploymentshop.onrender.com/user/login", { ...user });
-
+      const res = await axios.post("https://deploymentshop.onrender.com/user/login", { ...user });
+      const accessToken = res.data.accessToken;
+      localStorage.setItem("accessToken", accessToken);
       localStorage.setItem("firstLogin", true);
 
       window.location.href = "/";
